@@ -1,21 +1,15 @@
 package com.example.androidpedometer;
 
-import android.app.Activity;
 import android.app.Service;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Build;
-import android.os.Bundle;
 import android.os.IBinder;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.telecom.Call;
 import android.util.Log;
-import android.content.Context;
 
 
 import android.widget.TextView;
@@ -41,12 +35,13 @@ public class AndroidPedometer extends Service{
     @Override
     public void onCreate() {
         super.onCreate();
-        StartPedometer();
+
     }
 
     @Nullable
     @Override
-    public IBinder onBind(Intent intent) {
+    public IBinder onBind(Intent intent)
+    {
         return null;
     }
 
@@ -133,4 +128,9 @@ public class AndroidPedometer extends Service{
 
         }
     };
+
+    @Override
+    public Object getSystemService(String name) {
+        return UnityPlayer.currentActivity.getBaseContext().getSystemService(name);
+    }
 }

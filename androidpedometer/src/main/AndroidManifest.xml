@@ -8,10 +8,7 @@
             <uses-feature android:name="android.hardware.sensor.stepcounter" />
             <uses-feature android:name="android.hardware.sensor.stepdetector" />
             <application>
-                <activity android:name="com.example.androidpedometer.AndroidPedometer"
-                          android:theme="@android:style/Theme.Translucent.NoTitleBar">
-                </activity>
-
+                <Service android:name="com.example.androidpedometer.AndroidPedometer"></Service>
             </application>
 
 </manifest>
